@@ -682,37 +682,37 @@ body {
 
 
 /* ========================= */
-/* TENTANG PAGE */
+/* HOME (ROOT INDEX) */
 /* ========================= */
-.about-highlight-grid {
+.home-highlight-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 12px;
   margin: 16px 0 18px;
 }
 
-.about-highlight-card {
+.home-highlight-card {
   background: var(--bg-dark);
   border: 1px solid var(--border-color);
   border-radius: 8px;
   padding: 14px 14px 12px;
 }
 
-.about-highlight-card h4 {
+.home-highlight-card h4 {
   margin-bottom: 6px;
   font-size: 1rem;
   color: var(--accent-soft);
 }
 
-.about-highlight-card p {
+.home-highlight-card p {
   margin-bottom: 0;
 }
 
-.about-roadmap {
+.home-roadmap {
   margin: 8px 0 0 20px;
 }
 
-.about-roadmap li {
+.home-roadmap li {
   color: var(--text-secondary);
   line-height: 1.6;
   margin-bottom: 6px;
