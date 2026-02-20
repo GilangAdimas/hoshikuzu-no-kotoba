@@ -680,3 +680,40 @@ body {
   }
 }
 
+
+/* ========================= */
+/* HOME (ROOT INDEX) */
+/* ========================= */
+.home-highlight-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 12px;
+  margin: 16px 0 18px;
+}
+
+.home-highlight-card {
+  background: var(--bg-dark);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 14px 14px 12px;
+}
+
+.home-highlight-card h4 {
+  margin-bottom: 6px;
+  font-size: 1rem;
+  color: var(--accent-soft);
+}
+
+.home-highlight-card p {
+  margin-bottom: 0;
+}
+
+.home-roadmap {
+  margin: 8px 0 0 20px;
+}
+
+.home-roadmap li {
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin-bottom: 6px;
+}
