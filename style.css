@@ -1,0 +1,682 @@
+/* RESET */
+:root {
+  /* COLOR */
+  --bg-primary: #0f172a;
+  --bg-secondary: #1e293b;
+  --bg-dark: #020617;
+
+  --border-color: #334155;
+
+  --text-primary: #e5e7eb;
+  --text-secondary: #cbd5f5;
+  --text-muted: #94a3b8;
+  --text-hover: #273449;
+
+  /* BLUE SYSTEM */
+  --accent-blue: #3b82f6;
+  --accent-light: #60a5fa;
+  --accent-soft: #93c5fd;      /* biru lembut */
+  --accent-deep: #1d4ed8;      /* biru lebih gelap */
+  --accent-glow: #2563eb;      /* biru glow */
+
+  /* STATUS COLORS */
+  --color-sky: #38bdf8;    /* biru langit (info/comment) */
+  --color-note: #facc15;  /* kuning modern */
+  --color-warning: #f97316;    /* orange tegas */
+  --color-important: #ef4444;     /* merah modern */
+
+  /* GRADIENT */
+  --gradient-dark-blue: linear-gradient(
+    180deg,
+    transparent,
+    rgba(54, 134, 255, 0.3)
+  );
+  --gradient-blue: linear-gradient(
+    90deg,
+    rgba(59, 130, 246, 0.2),
+    transparent
+  );
+  
+  
+  /* FONT SIZE */
+  --fs-base: 1rem;
+  --fs-small: 0.85rem;
+  --fs-medium: 1.05rem;
+  --fs-large: 1.2rem;
+  --fs-title: 1.4rem;
+}
+
+
+  
+/* #93c5fd */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+/* BODY */
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+}
+
+/* HEADER */
+.header {
+  background: var(--bg-secondary);
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+}
+
+.logo {
+  color: var(--text-primary);
+}
+
+.nav a {
+  margin-left: 20px;
+  color: var(--text-muted)8;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.nav a:hover {
+  color: var(--text-primary);
+}
+
+/* HERO */
+.hero {
+  text-align: center;
+  padding: 60px 20px;
+  background: linear-gradient(
+    180deg,
+    #1e293b,
+    #0f172a
+  );
+}
+
+.hero h2 {
+  color: var(--text-primary);
+}
+
+.hero p {
+  color: var(--text-muted)8;
+}
+
+/* MAIN LAYOUT */
+.container {
+  display: flex;
+  gap: 20px;
+  padding: 30px;
+
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* CONTENT */
+.content {
+  flex: 3;
+  background: var(--bg-secondary);
+  padding: 24px;
+  border-radius: 10px;
+  border: 1px solid var(--border-color);
+}
+
+.content h3 {
+  margin-bottom: 10px;
+}
+
+.content p {
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+/* SIDEBAR (kalau nanti dipakai lagi) */
+.sidebar {
+  flex: 1;
+  background: var(--bg-secondary);
+  padding: 20px;
+  border-radius: 10px;
+  border: 1px solid var(--border-color);
+}
+
+.sidebar h3 {
+  margin-bottom: 10px;
+}
+
+.sidebar li {
+  color: var(--text-muted);
+}
+
+/* FOOTER */
+.footer {
+  text-align: center;
+  padding: 15px;
+  background: var(--bg-dark);
+  color: var(--text-muted);
+  border-top: 1px solid var(--border-color);
+}
+
+.lesson {
+  margin-bottom: 100px;
+}
+
+/* Judul */
+.lesson h3 {
+  font-size: 1.25rem;
+  margin-bottom: 14px;
+  color: var(--text-primary);
+  border-left: 4px solid var(--accent-light);
+  padding: 10px;
+  background: var(--gradient-blue);
+}
+
+.lesson h4 {
+  font-size: var(--fs-large);
+  margin-bottom: 8px;
+  color: var(--text-primary);
+}
+
+/* Paragraf */
+.lesson p {
+  color: var(--text-secondary);
+  line-height: 1.4;
+  margin-bottom: 8px;
+  font-size: 0.95rem;
+}
+
+/* Label kecil seperti "Contoh:" */
+.lesson .label {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  margin-top: 10px;
+  margin-bottom: 8px;
+}
+
+/* Custom List Style */
+.lesson ul {
+  list-style: none;        /* hilangkan bullet default */
+  padding-left: 0;         /* hilangkan padding bawaan */
+  margin: 12px 12px;
+}
+
+.lesson ul li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+  color: var(--text-secondary);
+}
+
+.lesson ul li::before {
+  content: ">";
+  color: var(--accent-blue);
+  font-weight: 700;
+}
+
+
+
+/* Highlight akhiran Jepang */
+.jp-suffix {
+  color: var(--accent-light);
+  font-weight: 500;
+}
+
+/* Box contoh */
+.example {
+  position: relative;
+  padding: 14px 16px;
+  margin: 8px 0 8px 0;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  font-size: 0.95rem;
+}
+
+/* Tebal di contoh */
+.example strong {
+  color: var(--accent-light);
+}
+
+.example::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px; /* ketebalan border */
+  height: 100%;
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    var(--accent-blue),
+    transparent
+  );
+}
+
+
+
+
+/* ========================= */
+/* TABLE */
+/* ========================= */
+
+.jp-table {
+  width: 100%;
+  table-layout: fixed;
+  border-collapse: collapse;
+  margin: 16px 0;
+  background: var(--bg-secondary);
+  overflow: hidden;
+  font-size: 0.95rem;
+}
+
+/* Header */
+.jp-table thead {
+  background: var(--gradient-dark-blue);
+}
+
+.jp-table th {
+  padding: 12px 16px;
+  text-align: left;
+  color: var(--text-primary);
+  font-weight: 600;
+  border-bottom: 1px solid var(--border-color);
+}
+
+/* Body */
+.jp-table td {
+  padding: 12px 16px;
+  color: var(--text-secondary);
+  border-bottom: 1px solid var(--border-color);
+  word-wrap: break-word;
+}
+
+/* Hover effect */
+.jp-table tbody tr:hover {
+  background: var(--text-hover);
+}
+
+/* Kolom Kanji lebih besar */
+.jp-table td:first-child {
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .jp-table th,
+  .jp-table td {
+    padding: 10px 12px;
+    font-size: 0.85rem;
+  }
+}
+
+/* Bacaan khusus (hari tidak beraturan) */
+.special-reading {
+  color: var(--accent-light);
+  font-weight: 500;
+}
+
+/* Optional: tooltip feel */
+.special-reading::after {
+  content: " ★";
+  color: var(--accent-blue);
+  font-size: 0.75em;
+}
+
+/* HIRAKATA　STYLE */
+
+/* KHUSUS TABEL HIRAKATA */
+.hirakata {
+  table-layout: auto;
+}
+
+.hirakata th.row-label {
+  background: var(--gradient-dark-blue);
+  text-align: center;
+  font-weight: 700;
+  width: 60px;
+}
+.hirakata td {
+  font-size: 1.6em;
+}
+
+/* Header kolom pertama kosong */
+.hirakata thead th:first-child {
+  background: var(--gradient-dark-blue);
+}
+
+/* Samakan ukuran header AIUEO dengan isi */
+.hirakata thead th {
+  text-align: center;
+  vertical-align: middle;
+}
+
+/* Samakan alignment semua sel */
+.hirakata td,
+.hirakata th {
+  text-align: center;
+  vertical-align: middle;
+}
+
+/* END OF TABEL */
+
+
+
+/* KATEGORI */
+.lesson-category {
+  margin: 24px 0;
+  padding: 16px 20px;
+  border-left: 4px solid var(--accent-light);
+  background-color: var(--bg-dark);
+  border-radius: 6px;
+}
+
+.category-title {
+  font-weight: bold;
+  font-size: 1.2rem;
+  color: var(--text-primary);
+  margin: 4px 0 12px 0;
+
+  display: inline-block;
+  border-bottom: 2px solid var(--accent-light);
+  padding-bottom: 4px;
+  /* 
+  border-bottom: 2px solid #60a5fa;
+  padding-bottom: 6px; */
+}
+
+.category-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.category-list li {
+  padding: 4px 0;
+  color: var(--text-secondary);
+  cursor: pointer;
+  
+  font-size: var(--fs-medium);
+}
+
+.category-list li:hover {
+  color: var(--accent-light);
+}
+
+.category-list a {
+  font-style: italic;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.has-submenu {
+  font-weight: 600;
+  margin-top: 10px;
+  padding: 6px 8px;
+  border-radius: 4px;
+  position: relative;
+  cursor: pointer;
+
+  color: var(--text-primary);
+}
+.has-submenu:hover {
+  background-color: rgba(96, 165, 250, 0.08);
+  color: var(--accent-light);
+}
+/* SUBMENU */
+.subcategory-list {
+  list-style: none;
+  padding-left: 16px;
+  margin-top: 6px;
+}
+
+.subcategory-list li {
+  font-size: 0.9rem;
+  padding: 3px 0;
+  color: var(--text-secondary);
+}
+.subcategory-list li a {
+  color: var(--text-secondary);
+}
+
+.subcategory-list a:hover {
+  color: var(--accent-light);
+}
+
+/* SUBMENU TITLE */
+.lesson-category h3 {
+  font-size: var(--fs-xl);
+  font-weight: 600;
+  margin-top: 18px;
+  padding-bottom: 4px;
+
+
+  border-bottom: 1px solid var(--accent-light);
+  display: inline-block;
+}
+
+
+/* END OF KATEGORI */
+
+
+/* ========================= */
+/* LESSON NUMBER TITLE */
+/* ========================= */
+.lesson-number {
+  position: relative;
+  margin: 18px 0 18px 0;
+  font-size: var(--fs-xl);
+  font-weight: 700;
+  color: var(--text-primary);
+  padding: 8px;
+  background: linear-gradient(
+    90deg,
+    rgba(59,130,246,0.12),
+    transparent
+  );
+  border-left: 3px solid var(--accent-blue);
+}
+
+
+.lesson-important, .lesson-note, .lesson-warning {
+  position: relative;
+  margin: 18px 0 18px 0;
+
+  font-size: var(--fs-xl);
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.lesson-important::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 220px;
+  height: 2px;
+
+  background: linear-gradient(
+    to right,
+    var(--color-important),
+    rgba(246, 81, 59, 0.2),
+    transparent
+  );
+}
+
+.lesson-note::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 220px;
+  height: 2px;
+
+  background: linear-gradient(
+    to right,
+    var(--color-note),
+    rgba(246, 187, 59, 0.2),
+    transparent
+  );
+}
+
+.lesson-warning::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 220px;
+  height: 2px;
+
+  background: linear-gradient(
+    to right,
+    var(--color-warning),
+    rgba(246, 100, 59, 0.2),
+    transparent
+  );
+}
+
+/* ========================= */
+/* CHAT CONVERSATION MODULE */
+/* ========================= */
+.chat-title {
+  position: absolute;
+  top: -12px;
+  left: 28px;   /* jarak dari kiri box */
+
+  padding: 4px 18px;
+
+  font-size: var(--fs-small);
+  font-weight: 600;
+  letter-spacing: 1.5px;
+
+  background: transparent;
+  color: var(--text-primary);
+
+  border: 1px solid var(--accent-light);
+
+  backdrop-filter: blur(6px);
+}
+
+.chat-box {
+  position: relative;
+  margin: 32px 0;
+  padding: 42px 24px 24px 28px;
+
+  border: 1px solid;
+  border-image: linear-gradient(
+    to right,
+    var(--accent-light),
+    rgba(59,130,246,0.1),
+    transparent
+  ) 1;
+
+  /* Gradient background */
+  background: linear-gradient(
+    90deg,
+    rgba(34, 119, 255, 0.08),
+    rgba(0,0,0,0)
+  );
+
+}
+
+/* Garis kiri */
+.chat-box::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 4px;
+}
+
+.chat-item {
+  position: relative;
+  padding-left: 18px;
+  margin-bottom: 22px;
+}
+
+/* Titik pembicara */
+.chat-item::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 4px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+
+/* Speaker A - Biru */
+.chat-a::before {
+  background: var(--accent-light);
+  box-shadow: 0 0 6px rgba(59,130,246,0.6);
+}
+
+/* Speaker B - Merah */
+.chat-b::before {
+  background: #ef4444;
+  box-shadow: 0 0 6px rgba(239,68,68,0.6);
+}
+
+/* Nama pembicara */
+.chat-header {
+  font-size: var(--fs-base);
+  font-weight: 600;
+  color: var(--text-secondary);
+  margin-bottom: 4px;
+}
+
+/* Teks Jepang */
+.chat-jp {
+  font-size: var(--fs-medium);
+  color: var(--text-primary);
+  line-height: 1.7;
+}
+
+/* Arti Indonesia */
+.chat-id {
+  font-size: var(--fs-small);
+  color: var(--text-muted);
+  opacity: 0.9;
+  font-style: italic;
+}
+
+
+
+
+/* ========================= */
+/* RESPONSIVE */
+/* ========================= */
+
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .nav a {
+    margin-left: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .header {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .nav a {
+    margin: 5px 0;
+  }
+}
+
